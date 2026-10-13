@@ -1,0 +1,54 @@
+SPACE INVADERS - ESP8266 + 1.3 INCH SH1106 OLED + TELEFON KONTROL
+===============================================================
+
+GEREKEN PARCALAR
+- ESP8266 NodeMCU veya Wemos D1 Mini
+- 1.3" 128x64 SH1106 I2C OLED (4 pinli)
+- 4 adet jumper kablo
+- ESP8266 icin USB veri/besleme kablosu
+- Telefon (tarayici ve Wi-Fi baglantisi)
+
+BASKA BUTON, DOKUNMATIK SENSOR, INTERNET VEYA UYGULAMA GEREKMIYOR.
+
+BAGLANTILAR - ESP8266 NodeMCU / Wemos D1 Mini
+OLED GND --> ESP8266 GND
+OLED VCC --> ESP8266 3V3 (5V degil)
+OLED SCL --> ESP8266 D1 (GPIO5)
+OLED SDA --> ESP8266 D2 (GPIO4)
+
+OLED uzerindeki pin dizilimi degisebilir. PIN ISIMLERINE bakarak bagla.
+SH1106 icin I2C adresi tipik olarak 0x3C. Ekran acilmazsa 0x3D denenebilir.
+
+ARDUINO IDE
+1. Preferences > Additional Boards Manager URLs:
+   https://arduino.esp8266.com/stable/package_esp8266com_index.json
+2. Board Manager: "esp8266 by ESP8266 Community" kur.
+3. Library Manager: "Adafruit SH110X", "Adafruit GFX Library", "Adafruit BusIO" kur.
+   ESP8266WiFi, ESP8266WebServer ve Wire kart paketinde bulunur.
+4. .ino dosyasini Arduino IDE'de ac.
+5. Tools > Board: NodeMCU 1.0 (ESP-12E Module) veya kullandigin Wemos D1 mini.
+6. COM portunu sec ve Upload yap.
+
+TELEFONDAN OYNA
+1. ESP8266 USB'den beslenirken OLED baslangic ekrani gostermeli.
+2. Telefonda Wi-Fi ayarlarindan ESP8266-SpaceInvaders agina baglan.
+3. Sifre: space1234
+4. 'Bu agda internet yok' uyarisinda bagli kal; gerekirse mobil veriyi kapat.
+5. Tarayici adres cubuguna http://192.168.4.1 yaz (https degil).
+6. OYUNU BASLAT butonuna dokun.
+7. SOL / SAG ve ATES dugmelerini basili tutarak oyna.
+
+OYUN
+- 18 dusman, skor ve dalga sistemi, 3 can ve dusman atislari.
+- OLED oyunu gosterir; telefon kontrol panelidir (oyun goruntusunun aynasi degildir).
+- En yuksek skor sadece enerji kesilene kadar korunur.
+- Aynı anda iki dügmeye dokunabilirsin (coklu dokunma destekleyen telefonda).
+
+SORUN GIDERME
+- OLED siyah: GND/VCC/SDA/SCL, SH1106/SSD1306 farki ve 0x3C/0x3D adresi.
+- Wi-Fi yok: Serial Monitor 115200 baud, board secimi ve USB beslemesini kontrol et.
+- Sayfa acilmiyor: Mobil veriyi kapat, Wi-Fi baglantisini koru, http://192.168.4.1 yaz.
+- Yukleme hatasi: Dogru COM portu ve kart surucusunu sec.
+- Kontroller takili kalirsa: 600ms komut gelmediginde otomatik durur.
+
+DOGRULAMA: Kod, son kullanicinin fiziksel ESP8266/SH1106 kartinda test edilmedi.

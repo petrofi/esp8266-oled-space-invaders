@@ -1,0 +1,27 @@
+SPACE INVADERS - GITHUB YUKLEME
+
+1. https://github.com/new adresinden bos Public repository olusturun.
+   Repository name: esp8266-oled-space-invaders
+   README / LICENSE / .gitignore'i GitHub uzerinden yeniden eklemeyin.
+
+2. ZIP dosyasini acin, esp8266-oled-space-invaders KLASORUNUN ICINDE
+   PowerShell veya Git Bash terminali acin.
+
+3. Sirasiyla calistirin:
+
+git init
+git branch -M main
+git add .
+git commit -m "Initial commit - ESP8266 OLED Space Invaders"
+git remote add origin https://github.com/petrofi/esp8266-oled-space-invaders.git
+git push -u origin main
+
+4. Kodu guncellemek icin sonraki yuklemelerde:
+
+git add .
+git commit -m "Update project"
+git push
+
+NOT: Komutlar Git'in kurulu oldugu bilgisayarda calisir.
+     GitHub oturumu acmaniz istenebilir.
+     Git adiniz ve e-posta adresiniz tanimli olmali.
